@@ -10,7 +10,7 @@ import kotlinx.html.*
 fun Application.configureRouting() {
     routing {
         get("") {
-            call.respondText("Hello World!")
+            call.respondText("Goodbye World!")
         }
         htmlRoutes()
 
