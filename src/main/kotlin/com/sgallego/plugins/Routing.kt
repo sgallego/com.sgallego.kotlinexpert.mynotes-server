@@ -12,7 +12,14 @@ fun Application.configureRouting() {
         get("") {
             call.respondText("Hello World!")
         }
-        get("/html") {
+        htmlRoutes()
+
+    }
+}
+
+private fun Routing.htmlRoutes() {
+    route("html") {
+        get {
             call.respondHtml(status = HttpStatusCode.OK) {
                 head {
                     title { +"Hello Ktor" }
@@ -26,7 +33,7 @@ fun Application.configureRouting() {
                 }
             }
         }
-        get("/html/clicked") {
+        get("clicked") {
             call.respondHtml {
                 head {
                     title { +"Clicked" }
