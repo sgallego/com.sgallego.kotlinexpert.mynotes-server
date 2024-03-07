@@ -8,6 +8,7 @@ import io.ktor.server.routing.*
 fun Application.configureRouting() {
     routing {
         route("/notes"){
+            //CREATE
             get {
                 call.respond(NotesRepository.getAll())
             }
